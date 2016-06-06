@@ -1,0 +1,30 @@
+// VerilogA for cad4soc, cad4socSampleHold, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module tste16Lab1SampleHold(AGND, clk, vIn, vOut);
+
+inout AGND;
+electrical AGND;
+inout clk;
+electrical clk;
+inout vIn;
+electrical vIn;
+inout vOut;
+electrical vOut;
+
+parameter real clkThreshold = 1.65 from [0:inf];
+real vOutTemp;
+
+analog begin
+
+@(cross(V(clk,AGND) - clkThreshold,1))
+	begin
+		vOutTemp = V(vIn,AGND);
+	end
+V(vOut,AGND) <+ vOutTemp;
+
+end
+
+endmodule

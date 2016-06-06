@@ -29,6 +29,8 @@ ncvlog.log
 ConnectedPinsLog.txt
 UnconnectedPinsLog.txt
 *~
+*.va.bak
+libManager.log
 
 #Cliosoft
 .SOS

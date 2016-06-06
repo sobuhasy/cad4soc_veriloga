@@ -1,0 +1,56 @@
+// VerilogA for cad4soc, cad4socFileWriter, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module cad4socFileWriter(clk, d0, d1, d2, d3);
+input clk;
+electrical clk;
+input d0;
+electrical d0;
+input d1;
+electrical d1;
+input d2;
+electrical d2;
+input d3;
+electrical d3;
+
+parameter clkThreshold = 1.65 from [0:inf]; // Change for different logic level
+
+(*cds_inherited_parameter*) parameter real firstPole = 0.0;
+(*cds_inherited_parameter*) parameter real inputFreq = 0.0;
+(*cds_inherited_parameter*) parameter real clkPeriod = 0.0;
+(*cds_inherited_parameter*) parameter real tRiseFall = 0.0;
+
+integer fid, adc_out;
+
+analog begin
+
+	// Open output file
+	@(initial_step) begin
+		fid = $fopen("~/tste16_tutorial/adc_raw_output.csv", "w");
+		$fstrobe(fid, "firstPole=,%g,inputFreq=,%g,clkPeriod=,%g,tRiseFall=,%g",
+			firstPole, inputFreq, clkPeriod, tRiseFall);
+	end
+
+	// Close output file
+	@(final_step) begin
+		$fclose(fid);
+	end
+
+	// Write output value at every clock cycle
+	@(cross(V(clk) - clkThreshold, -1)) begin
+		// First the value has to be converted to an integer
+		adc_out = 0;
+		adc_out = adc_out + ( (V(d0) > clkThreshold) ? 1 : 0 );
+		adc_out = adc_out + ( (V(d1) > clkThreshold) ? 2 : 0 );
+		adc_out = adc_out + ( (V(d2) > clkThreshold) ? 4 : 0 );
+		adc_out = adc_out + ( (V(d3) > clkThreshold) ? 8 : 0 );
+		// Then the result can be written to the output file
+		$fstrobe(fid, "%d", adc_out);
+	end
+
+end
+
+
+endmodule

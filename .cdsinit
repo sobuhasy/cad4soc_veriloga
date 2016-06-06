@@ -161,8 +161,8 @@ let( (bindKeyFileList file path saveSkillPath)
     setSkillPath(saveSkillPath)
 )
 
-load( strcat( getShellEnvVar("MGC_HOME") "/shared/pkgs/icv/tools/queryskl/calibre.skl" ))
-load( strcat( getShellEnvVar("WICKED_HOME") "/config/WiCkeD.il" ))
+;load( strcat( getShellEnvVar("MGC_HOME") "/shared/pkgs/icv/tools/queryskl/calibre.skl" ))
+;load( strcat( getShellEnvVar("WICKED_HOME") "/config/WiCkeD.il" ))
 ;
 ;
 ;  An individual user may wish to add some bindkeys of his/her own or
