@@ -1,4 +1,4 @@
 DEFINE cdsDefTechLib $CDS_INST_DIR/tools/dfII/etc/cdsDefTechLib
 DEFINE basic $CDS_INST_DIR/tools/dfII/etc/cdslib/basic
 DEFINE analogLib $CDS_INST_DIR/tools/dfII/etc/cdslib/artist/analogLib
-DEFINE cad4soc $HOME/cad4soc_veriloga/cad4soc
+DEFINE cad4soc $PWD/cad4soc
