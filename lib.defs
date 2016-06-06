@@ -1,0 +1,6 @@
+DEFINE cdsDefTechLib $CDS_INST_DIR/tools/dfII/etc/cdsDefTechLib 
+ASSIGN cdsDefTechLib libMode shared
+DEFINE basic $CDS_INST_DIR/tools/dfII/etc/cdslib/basic 
+ASSIGN basic libMode shared
+DEFINE analogLib $CDS_INST_DIR/tools/dfII/etc/cdslib/artist/analogLib 
+ASSIGN analogLib libMode shared

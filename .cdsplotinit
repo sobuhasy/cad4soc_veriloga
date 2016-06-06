@@ -1,0 +1,186 @@
+############################################################################
+# Cadence Design Systems                                       Version 5.1.0
+#
+# cdsplotinit plotter models file.
+#
+# This file is the foundation plotter model data base for Cadence Design
+# Systems plot software.  This file is used to build site specific 
+# .cdsplotinit files.  
+#
+# IMPORTANT****YOU MUST CREATE A SITE SPECIFIC VERSION OF THIS FILE AND
+#              LOCATE IT IN EITHER <install_path>/tools/plot, your 
+#              working directory, or your home directory.  
+#   
+############################################################################
+#
+# Adobe PostScript Level 1 Plotters
+#
+EPS300|Encapsulated PostScript 300 dpi: \
+	:manufacturer=Adobe: \
+	:type=epsf: \
+	:maximumPages#1: \
+	:resolution#300: \
+	:paperSize="A4" 2360 3392 120 120: \
+	:paperSize="A3" 3392 4720 120 120: \
+	:paperSize="Unlimited"  72000 72000:
+
+EPS600|Encapsulated PostScript 600 dpi: \
+	:manufacturer=Adobe: \
+	:type=epsf: \
+	:maximumPages#1: \
+	:resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:
+#
+# Adobe PostScript Level 2 Plotters
+#
+PS Level2/300|Generic 300 dpi Adobe PostScript Level 2 Plotter: \
+        :manufacturer=Adobe: \
+        :type=postscript2: \
+        :maximumPages#30: \
+        :resolution#300: \
+	:paperSize="A4" 2360 3392 120 120: \
+	:paperSize="A3" 3392 4824 120 120: \
+	:paperSize="Unlimited"  72000 72000:
+
+PS Level2/600|Generic 600 dpi Adobe PostScript Level 2 Plotter: \
+        :manufacturer=Adobe: \
+        :type=postscript2: \
+        :maximumPages#30: \
+        :resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:
+
+PS Level1/300|Generic 300 dpi Adobe PostScript Level 1 Plotter: \
+        :manufacturer=Adobe: \
+        :type=postscript1: \
+        :maximumPages#30: \
+        :resolution#300: \
+	:paperSize="A4" 2360 3392 120 120: \
+	:paperSize="A3" 3392 4824 120 120: \
+	:paperSize="Unlimited"  72000 72000:
+
+PS Level1/600|Generic 600 dpi Adobe PostScript Level 1 Plotter: \
+        :manufacturer=Adobe: \
+        :type=postscript1: \
+        :maximumPages#30: \
+        :resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:
+
+ps3_printer|HP b&w laser jet printer: \
+        :manufacturer=Hewlett-Packard: \
+        :type=postscript1: \
+        :spool=lp -dps3: \
+        :query=lpstat -ops3: \
+	:maximumPages#30: \
+        :resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:
+	
+kop1_printer|HP b&w laser jet printer: \
+        :manufacturer=Hewlett-Packard: \
+        :type=postscript1: \
+        :spool=lp -dkop1: \
+        :query=lpstat -okop1: \
+	:maximumPages#30: \
+        :resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:	
+
+ps1_printer|HP color laser jet printer: \
+        :manufacturer=Hewlett-Packard: \
+        :type=postscript2: \
+        :spool=lp -dps1: \
+        :query=lpstat -ops1: \
+	:maximumPages#30: \
+        :resolution#600: \
+	:paperSize="A4" 4720 6784 240 240: \
+	:paperSize="A3" 6784 9648 240 240: \
+	:paperSize="Unlimited"  72000 72000:
+
+
+#
+# Hewlett-Packard HP-GL/2 plotters.
+#
+
+HP DJ600|Hewlett-Packard DesignJet 600: \
+	:manufacturer=Hewlett-Packard: \
+	:type=hpgl2: \
+	:maximumPages#10: \
+	:resolution#1016: \
+	:white#1:black#1:red#1:yellow#1:green#1:cyan#1:blue#1:magenta#1: \
+	:paperSize="A portrait" 8226 9806:     \
+	:paperSize="A landscape" 10766 7266:   \
+	:paperSize="B portrait" 10766 15902:   \
+	:paperSize="B landscape" 16862 9806:   \
+	:paperSize="C portrait" 16862 20982:   \
+	:paperSize="C landscape" 21942 15902:  \
+	:paperSize="D portrait" 21942 33174:   \
+	:paperSize="D landscape" 34134 20982:  \
+	:papersize="E portrait" 34134 43334:   \
+	:paperSize="A0 portrait" 33230 46190:  \
+	:paperSize="A1 portrait" 23350 32270:  \
+	:paperSize="A1 landscape" 33230 22390: \
+	:paperSize="A2 portrait" 16390 22390:  \
+	:paperSize="A2 landscape" 23350 15430: \
+	:paperSize="A3 portrait" 11470 15430:  \
+	:paperSize="A3 landscape" 16390 10510: \
+	:paperSize="A4 portrait" 7990 10510:   \
+	:paperSize="A4 landscape" 11470 7030:  \
+	:paperSize="24 inches wide" 23984 0:   \
+	:paperSize="36 inches wide" 36176 0:
+
+HP DJ650C|Hewlett-Packard DesignJet 650C: \
+	:manufacturer=Hewlett-Packard: \
+	:type=hpgl2: \
+	:maximumPages#10: \
+	:resolution#1016: \
+	:paperSize="A portrait" 8226 9806:     \
+	:paperSize="A landscape" 10766 7266:   \
+	:paperSize="B portrait" 10766 15902:   \
+	:paperSize="B landscape" 16862 9806:   \
+	:paperSize="C portrait" 16862 20982:   \
+	:paperSize="C landscape" 21942 15902:  \
+	:paperSize="D portrait" 21942 33174:   \
+	:paperSize="D landscape" 34134 20982:  \
+	:papersize="E portrait" 34134 43334:   \
+	:paperSize="A0 portrait" 33230 46190:  \
+	:paperSize="A1 portrait" 23350 32270:  \
+	:paperSize="A1 landscape" 33230 22390: \
+	:paperSize="A2 portrait" 16390 22390:  \
+	:paperSize="A2 landscape" 23350 15430: \
+	:paperSize="A3 portrait" 11470 15430:  \
+	:paperSize="A3 landscape" 16390 10510: \
+	:paperSize="A4 portrait" 7990 10510:   \
+	:paperSize="A4 landscape" 11470 7030:  \
+	:paperSize="24 inches wide" 23984 0:   \
+	:paperSize="36 inches wide" 36176 0:
+
+HPGL Penplotter|Hewlett-Packard DraftMaster: \
+	:manufacturer=Hewlett-Packard: \
+	:type=hpgl2pen: \
+	:maximumPages#10: \
+	:resolution#1016: \
+	:white#8:black#1:red#6:yellow#4:green#7:cyan#2:blue#5:magenta#3: \
+	:paperSize="A portrait" 7346 8926:     \
+	:paperSize="A landscape" 9886 6386:    \
+	:paperSize="B portrait" 9886 15022:    \
+	:paperSize="C landscape" 21062 15022:  \
+	:paperSize="D portrait" 21062 32294:   \
+	:paperSize="D landscape" 33254 20102:  \
+	:papersize="E portrait" 33254 42454:   \
+	:paperSize="A0 portrait" 32350 45310:  \
+	:paperSize="A1 portrait" 22470 31390:  \
+	:paperSize="A1 landscape" 32350 21510: \
+	:paperSize="A2 landscape" 22470 14540: \
+	:paperSize="A3 portrait" 10580 14540:  \
+	:paperSize="A4 portrait" 7120 9640:    \
+	:paperSize="A4 landscape" 10590 6150:  \
+	:paperSize="36 inches wide" 32360 0:
+ 

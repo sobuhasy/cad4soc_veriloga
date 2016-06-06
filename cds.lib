@@ -1,0 +1,3 @@
+DEFINE cdsDefTechLib $CDS_INST_DIR/tools/dfII/etc/cdsDefTechLib 
+DEFINE basic $CDS_INST_DIR/tools/dfII/etc/cdslib/basic 
+DEFINE analogLib $CDS_INST_DIR/tools/dfII/etc/cdslib/artist/analogLib 
