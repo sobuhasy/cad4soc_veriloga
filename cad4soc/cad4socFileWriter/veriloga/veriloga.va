@@ -28,7 +28,7 @@ analog begin
 
 	// Open output file
 	@(initial_step) begin
-		fid = $fopen("~/tste16_tutorial/adc_raw_output.csv", "w");
+		fid = $fopen("~/cad4soc_veriloga/adc_raw_output.csv", "w");
 		$fstrobe(fid, "firstPole=,%g,inputFreq=,%g,clkPeriod=,%g,tRiseFall=,%g",
 			firstPole, inputFreq, clkPeriod, tRiseFall);
 	end
