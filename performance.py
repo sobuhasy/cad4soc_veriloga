@@ -80,7 +80,18 @@ enob = (sinad-1.76)/6.02
 print "Effective Number of Bits:\t%.3f" % enob
 
 # make plots pretty
-plt.style.use('ggplot')
+# make plots pretty
+if hasattr(plt, 'style'):
+    plt.style.use('ggplot')
+else:
+    # for compatibility with ancient matplotlib versions
+    plt.rc('axes', facecolor='#E6E6E6', grid=True, color_cycle=['#EE6666', '#3388BB', '#9988DD',
+            '#EECC55', '#88BB44', '#FFBBBB'])
+    plt.rc('grid', color='w', linestyle='solid')
+    plt.rc('xtick', direction='out', color='gray')
+    plt.rc('ytick', direction='out', color='gray')
+    plt.rc('patch', edgecolor='#E6E6E6')
+
 
 # plot the sampled signal in the time domain
 plt.subplot(211)
