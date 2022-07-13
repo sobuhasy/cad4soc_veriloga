@@ -18,6 +18,7 @@ if (! -e ~/.ssh/id_rsa) then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
     # add it so it can be used for authorization
     cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+endif
 
 # connect to the simulation server and add its host fingerprint
 # without prompting the user
