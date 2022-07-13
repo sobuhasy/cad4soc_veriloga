@@ -6,17 +6,21 @@ set SIMSERVER = "amnesix.ies.e-technik.tu-darmstadt.de"
 echo "CADENCE VIRTUOSO LAUNCHER"
 echo ""
 
-# so if there's no SSH key we'll deal with that...
-if (! -e ~/.ssh/id_rsa) then
-    # first we have to fix the permissions :(
-    chmod go-w "/home/$user"
-    if (! -d ~/.ssh ) then
-        mkdir ~/.ssh
-    endif
+# first we have to fix the permissions :(
+chmod go-w "/home/$user"
+if ( -d ~/.ssh ) then
     chmod 700 ~/.ssh
-    # generate SSH key
+endif
+
+# so if there's no SSH key we'll generate one
+if (! -e ~/.ssh/id_rsa) then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
-    # add it so it can be used for authorization
+endif
+
+# let's check if our key is in the authorized_keys file and if
+# not we'll add it
+grep -f ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys >& /dev/null
+if ($? != 0) then
     cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
 endif
 
