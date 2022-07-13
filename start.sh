@@ -22,7 +22,12 @@ endif
 grep -f ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys >& /dev/null
 if ($? != 0) then
     cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+    # let's wait a few seconds so that the server receives the updated file
+    echo "transferring files, please wait..."
+    sleep 3
 endif
+
+
 
 # connect to the simulation server and add its host fingerprint
 # without prompting the user
