@@ -21,4 +21,4 @@ if (! -e ~/.ssh/id_rsa) then
 
 # connect to the simulation server and add its host fingerprint
 # without prompting the user
-ssh -o StrictHostKeyChecking=accept-new -X -l "$user" "$SIMSERVER" 'tcsh -s' < /home/$USER/cad4soc_veriloga/virtuoso.sh
+ssh -o StrictHostKeyChecking=no -X -l "$user" "$SIMSERVER" 'tcsh -s' < /home/$USER/cad4soc_veriloga/virtuoso.sh
