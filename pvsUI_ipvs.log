@@ -1,0 +1,21 @@
+panic: runtime error: slice bounds out of range
+
+goroutine 1 [running]:
+gitlab.cadence.com/platform-services/cdnsEnvCheck/platform.(*OSVersion).processUbuntuVersion(0xc420053c40, 0xc4200e8000, 0xe8, 0xc4200e6000, 0xe8)
+	/home/fujii/src/goworkspace/src/gitlab.cadence.com/platform-services/cdnsEnvCheck/platform/osversions.go:122 +0x2ad
+gitlab.cadence.com/platform-services/cdnsEnvCheck/platform.(*OSVersion).getVersion(0xc420053c40, 0xc4200e8000, 0xe8)
+	/home/fujii/src/goworkspace/src/gitlab.cadence.com/platform-services/cdnsEnvCheck/platform/osversions.go:134 +0x184
+gitlab.cadence.com/platform-services/cdnsEnvCheck/platform.GetDistVersion(0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/home/fujii/src/goworkspace/src/gitlab.cadence.com/platform-services/cdnsEnvCheck/platform/osversions.go:170 +0xc6
+main.runChecks(0x6b5601, 0xc42000a410, 0x0, 0x0, 0x0)
+	/home/fujii/src/goworkspace/src/gitlab.cadence.com/platform-services/cdnsEnvCheck/checks.go:25 +0x37
+main.main()
+	/home/fujii/src/goworkspace/src/gitlab.cadence.com/platform-services/cdnsEnvCheck/cdnsEnvCheck.go:78 +0x244
+pvsgui:   ERROR: The OA2.2 library directory (/eda/cadence/2020-21/RHELx86/PVS_19.15.000/share/oa/lib/linux_rhel60_64/opt) does not seem to exist.
+pvsgui:    INFO: You have OA_UNSUPPORTED_PLAT set to "linux_rhel60" in your environment:
+pvsgui:          check that the value provided correspond to a valid OA platform.
+pvsgui:          If this value is correct, check your OA installation.
+pvsgui:    INFO: Note that OpenAccess (OA) requires running the Configure phase.
+pvsgui:          See the "OpenAccess Installation and Configuration Guide" before
+pvsgui:          you complete the configuration step. This manual is included with
+pvsgui:          the Cadence product documentation.

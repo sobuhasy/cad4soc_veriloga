@@ -1,0 +1,26 @@
+// VerilogA for cad4soc, cad4socRcFilter, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module cad4socRcFilter(AGND, Vin, Vout);
+inout AGND;
+electrical AGND;
+inout Vin;
+electrical Vin;
+inout Vout;
+electrical Vout;
+
+// end of automatically generated header
+
+// parameter defines the pole of the filter
+parameter real pole1 = -100e3*2*3.1415 from (-inf:0);
+
+analog begin
+	// Laplace transform the pole and apply that to the input
+	V(Vout, AGND) <+ laplace_zp(V(Vin, AGND), ,{pole1, 0});
+end
+
+// end of module
+
+endmodule

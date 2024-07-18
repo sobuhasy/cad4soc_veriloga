@@ -1,0 +1,43 @@
+// VerilogA for cad4soc, cad4socQuantizer, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module cad4socQuantizer(D0, D1, D2, D3, AGND, vIn);
+output D0;
+electrical D0;
+output D1;
+electrical D1;
+output D2;
+electrical D2;
+output D3;
+electrical D3;
+inout AGND;
+electrical AGND;
+input vIn;
+electrical vIn;
+
+parameter real vLow = 0 from [0:inf];
+parameter real vHigh = 3.3 from [0:inf];
+
+parameter real vRefL = 0 from [0:inf];
+parameter real vRefH = 3.3 from [0:inf];
+
+localparam integer levels = 16;
+integer result;
+
+analog begin
+	result = levels*(V(vIn,AGND) - vRefL)/(vRefH - vRefL)-0.5;
+
+	if (result > levels-1)
+		result = levels-1;
+	else if (result < 0)
+		result = 0;
+
+	V(D0) <+ (result & 1) ? vHigh : vLow;
+	V(D1) <+ (result & 2) ? vHigh : vLow;
+	V(D2) <+ (result & 4) ? vHigh : vLow;
+	V(D3) <+ (result & 8) ? vHigh : vLow;
+end
+
+endmodule
